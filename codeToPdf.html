@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Intro.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css">
+<!-- Intro.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/intro.js/minified/intro.min.js"></script>
+
+
+  <!--FOR SEO-->
+  <meta name="description" content="Convert your code files into beautiful PDFs easily. Free online tool for students to format and export Python, Java, C++ code to PDF.">
+  <meta name="keywords" content="code to PDF, PDF converter, student tool, programming PDF, python to pdf">
+  <!--SEO-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Convert your lab codes to PDF easily – Java, Python, or C++!">
+  <meta charset="UTF-8">
+  <title>Code to PDF - Convert codes PDF</title>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YDKWMC9XTK');
+</script>
+  <link rel="icon" type="image/png" href="images/favB.png">
+  <meta name="description" content="A handy tool to convert your Java/C++/Python lab codes into a well-organized PDF. Perfect for students!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="codeToPdf.css">
+</head>
+<body>
+
+  <nav>
+    <h1>Codes to PDF</h1>
+
+  </nav>
+
+  <section class="hero">
+    <h2>Convert Your Code Files To PDF Instantly!</h2>
+    <p id="handy">Easily upload your code files, preview them, and generate a clean PDF. Fast, simple, and mobile-friendly</p>
+     <!--Tour Button-->
+  </section>
+
+  <section class="input-area">
+    
+    <div class="drop-area" id="dropArea">
+      <!-- FILE UPLOAD -->
+      <div id="fileIconContainer" style="position: relative; display: inline-block; margin-top: 5px; display: none;">
+        <img src="icons/file.png" alt="Files" style="width: 60px; height: 60px;">
+        <span id="fileCountBadge" style="
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background: red;
+          color: white;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 22px;
+          font-size: 14px;
+          font-weight: bold;
+          box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        ">0</span>
+      </div>
+      <!-- FILE UPLOAD END-->
+
+      <p><strong>Drag or click here</strong> to upload your .java/.py/.js etc files</p>
+      <input type="file" id="fileInput" accept=".java,.py,.cpp,.js,.html,.css,.c,.txt,.r,.R" multiple hidden>
+    </div>
+
+    <!--TOAST NOTIFICATION-->
+    <!-- Toast Container -->
+<div id="toast" style="
+visibility: hidden;
+min-width: 250px;
+background-color: #333;
+color: #fff;
+text-align: center;
+border-radius: 5px;
+padding: 16px;
+position: fixed;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 1000;
+font-size: 17px;
+opacity: 0;
+transition: opacity 0.5s, bottom 0.5s;
+">
+File uploaded! Now you can Generate or Preview 🎉
+</div>
+<!--TOAST NOTIFICATION END-->
+
+    <div class="input-controls center">
+      <button onclick="previewFiles()" id="btn">Preview Files</button>
+      <button onclick="generatePDF()" id="btn">Generate PDF</button>
+    </div>
+
+  </section>
+        
+  <section class="how-to-use">
+    <h2>How to Use?</h2>
+    <p id="howPara">This simple 3-step process shows you how to convert your code files into PDF documents using our tool.</p>
+    <div class="steps">
+      <div class="step">
+        <h3>1️⃣ Upload code files</h3>
+        <p>Select N number of code files to upload. (e.g. Java, Python, C etc).</p>
+      </div>
+      <div class="step">
+        <h3>2️⃣ Preview PDF</h3>
+        <p>Review uploaded files and output before generating PDF.</p>
+      </div>
+      <div class="step">
+        <h3>3️⃣ Generate PDF</h3>
+        <p>Click the 'Generate PDF' button and download instantly.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <br><br><br><br><br><br><br><br>
+  <!--Blog 1-->
+  <h2 style="text-align:center; margin-top: 40px;">📚 Latest Blog Articles</h2>
+  <p style="font-size: 13px; color: #888; text-align:center; font-style:italic">✍️ Written by Nitin Singh • April 2025</p>
+
+  <section class="blog-preview">
+    <h3>📄 Why Turn Code into PDFs for Assignments?</h3>
+    <p>Submitting code as a PDF is more than just a formatting choice…</p>
+    <button onclick="toggleBlog('blog1')">Read More</button>
+    <div class="blog-full" id="blog1">
+      <p>Many college professors prefer a clean, readable PDF because it preserves indentation and structure. Submitting screenshots or copy-pasted code in Word can mess up your formatting.</p>
+  
+      <p>With online tools like <strong>Code2PDF</strong>, you can:</p>
+      <ul>
+        <li>Maintain proper indentation and spacing</li>
+        <li>Use readable fonts and consistent formatting</li>
+        <li>Highlight your code using syntax colors</li>
+        <li>Avoid plagiarism or formatting issues</li>
+      </ul>
+  
+      <p><em>Bonus:</em> You can also combine your code, comments, and screenshots into a single neat file for submission.</p>
+  
+      <p><strong>So the next time your professor asks for a coding assignment, be smart — use Code2PDF and impress them with a clean submission.</strong></p>
+  
+      <a href="https://codetopdf.netlify.app">Try Code2PDF Now</a>
+    </div>
+    <style>
+      .blog-preview {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.blog-preview h3 {
+  font-size: 20px;
+  color: #007c91;
+}
+
+.blog-preview p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.blog-preview ul {
+  margin-left: 20px;
+}
+
+.blog-preview button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.blog-preview button:hover {
+  background-color: #0097a7;
+}
+
+.blog-full {
+  display: none;
+  margin-top: 15px;
+  background-color: #f4f9ff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+    </style>
+
+    <script>
+      function toggleBlog(id) {
+  const blog = document.getElementById(id);
+  blog.style.display = blog.style.display === 'block' ? 'none' : 'block';
+}
+
+    </script>
+
+  </section>
+
+  <section class="blog-preview">
+    <h3>📄 Top 5 Online Tools Every Programming Student Should Know</h3>
+    <p>Whether you are student or preparing for coding interviews - Smart tools can make life easier....</p>
+    <button onclick="toggleBlog('blog2')">Read More</button>
+    <div class="blog-full" id="blog2">
+  
+      <p>Here are 5 tools every student <strong>coder</strong>, Should try:</p>
+      <ul>
+        <li>Code2PDF - Easily turn code into clean PDFs for assignments.</li>
+        <li>PasteBin - Share code with classmates online</li>
+        <li>OnlineGBD - Run and test code in browser</li>
+        <li>Draw.io - Create ER diagrams and flowcharts</li>
+        <li>Notion - Take study notes</li>
+        <li>Napkin.ai - Make diagrams and visualizations</li>
+      </ul>
+  
+      <p>Most of these tools are free and accessible from mobile too. They're perfect for last-minute assignment rush or collaborating with a friend remotely.</p>
+  
+      <p><strong>Bookmark them to keep them ready before deadline hit!</strong></p>
+  
+      <a href="https://codetopdf.netlify.app">Try Code2PDF Now</a>
+    </div>
+    <style>
+      .blog-preview {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.blog-preview h3 {
+  font-size: 20px;
+  color: #007c91;
+}
+
+.blog-preview p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.blog-preview ul {
+  margin-left: 20px;
+}
+
+.blog-preview button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.blog-preview button:hover {
+  background-color: #0097a7;
+}
+
+.blog-full {
+  display: none;
+  margin-top: 15px;
+  background-color: #f4f9ff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+    </style>
+
+    <script>
+      function toggleBlog(id) {
+  const blog = document.getElementById(id);
+  blog.style.display = blog.style.display === 'block' ? 'none' : 'block';
+}
+
+    </script>
+
+  </section>
+
+  <section class="blog-preview">
+    <h3>📄 How to make Clean code Assignments</h3>
+    <p>Many students overlook presentation when submitting coding assignments. But did you know that clean and well-formatted code can leave a lasting impression on you teachers or professors?</p>
+    <button onclick="toggleBlog('blog3')">Read More</button>
+    <div class="blog-full" id="blog3">
+  
+      <p>Here's why <strong>clean code</strong> matters</p>
+      <ul>
+        <li>✅ It shows professionalism and seriousness toward the task.</li>
+        <li>✅ Teachers find it easier to read, understand, and evaluate.</li>
+        <li>✅ Reduces the chance of silly mistakes and syntax issues.</li>
+      </ul>
+
+      <br><strong>Tips to submit better code assignments:</strong>
+      <ol>
+        <li> Use proper indentation (tabs or spaces consistently).</li>
+        <li> Add meaningful comments to explain logic.</li>
+        <li> Don’t leave unused variables or functions.</li>
+        <li> Convert your code into a neatly formatted PDF with our tool!</li>
+      </ol>
+  
+      <br>This small effort can make a big difference in your grades and build good habits for the future.
+
+      <br><br>Happy coding! 🎓💻
+  
+      <a href="https://codetopdf.netlify.app">Try Code2PDF Now</a>
+    </div>
+    <style>
+      .blog-preview {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.blog-preview h3 {
+  font-size: 20px;
+  color: #007c91;
+}
+
+.blog-preview p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.blog-preview ul {
+  margin-left: 20px;
+}
+
+.blog-preview button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.blog-preview button:hover {
+  background-color: #0097a7;
+}
+
+.blog-full {
+  display: none;
+  margin-top: 15px;
+  background-color: #f4f9ff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+    </style>
+
+    <script>
+      function toggleBlog(id) {
+  const blog = document.getElementById(id);
+  blog.style.display = blog.style.display === 'block' ? 'none' : 'block';
+}
+
+    </script>
+
+  </section>
+
+  <!--FAQ SECTION-->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">Which file types can I upload?</button>
+        <div class="faq-answer">
+          <p>You can upload common code file formats such as .txt, .cpp, .py, .java, .js, .html, and many more.</p>
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">Is my uploaded code saved?</button>
+        <div class="faq-answer">
+          <p>No. Your code is never saved or shared. It is processed temporarily to generate the PDF, ensuring privacy and security.</p>
+        </div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">Can I use it on mobile devices?</button>
+        <div class="faq-answer">
+          <p>Yes! Code2PDF is fully responsive and can be used on mobile phones, tablets, and desktops.</p>
+        </div>
+      </div>
+  
+    </div>
+    <script>
+      const faqs = document.querySelectorAll('.faq-question');
+    
+      faqs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+    </script>
+    
+  </section>
+  
+  
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="privacyPolicy.html" target="_blank">Privacy Policy</a> |
+        <a href="terms.html" target="_blank">Terms</a> |
+        <a href="contact.html" target="_blank">Contact</a> |
+        <a href="about.html" target="_blank">About Us</a>
+      </div>
+      <p class="copyright">
+        &copy; 2025 Code2PDF. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!--TOUR-->
+  <script>
+    function startTour() {
+      introJs().start();
+    }
+  
+    // Optional: Start tour automatically for first-time visitors
+    window.onload = function () {
+      if (!localStorage.getItem("tourShown")) {
+        introJs().start();
+        localStorage.setItem("tourShown", "true");
+      }
+    };
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="codeToPdf.js"></script>
+
+  
+
+</body>
+</html>
